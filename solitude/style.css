@@ -64,6 +64,12 @@ body {
 
 #content {
     margin: 10px;
+    display: flex;
+}
+
+#titleInfo {
+    flex: 1 1 50%;
+    margin-right: 5px;
 }
 
 #title {
@@ -79,6 +85,7 @@ body {
 }
 
 #map {
+    flex: 1 1 50%;
+    margin-left: 5px;
     height: 400px;
-    width: 50%;
 }
