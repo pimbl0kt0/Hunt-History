@@ -14,4 +14,6 @@ function clickLocations()
 {
     $("#locationItems").css("visibility", "visible");
     $("#locationItems").css("height", "auto");
+    $("#locationItems").css("width", "auto");
+    $("#content").css("padding-left", $('#sidebar').css("width"));
 }
