@@ -12,8 +12,8 @@ $("#content").css("padding-left", $('#sidebar').css("width"));
 
 function clickLocations()
 {
-    $("#locationItems").css("visibility", "visible");
-    $("#locationItems").css("height", "auto");
-    $("#locationItems").css("width", "auto");
+    $("#locations").css("visibility", "visible");
+    $("#locations").css("height", "auto");
+    $("#locations").css("width", "auto");
     $("#content").css("padding-left", $('#sidebar').css("width"));
 }
