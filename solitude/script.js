@@ -1,19 +1,25 @@
-function initMap() {
-    // The location of Uluru
-    var uluru = {lat: -25.344, lng: 131.036};
-    // The map, centered at Uluru
-     var map = new google.maps.Map(
-     document.getElementById('map'), {zoom: 4, center: uluru});
-    // The marker, positioned at Uluru
-    var marker = new google.maps.Marker({position: uluru, map: map});
-}
+resetLayout();
 
-$("#content").css("padding-left", $('#sidebar').css("width"));
+window.addEventListener('resize', (e) =>
+{
+    resetLayout();
+});
+
+function resetLayout()
+{
+    $("#positioner").css({width: $("body").width()-$("#sidebar").width(), 'margin-left': $("#sidebar").width()});
+}
 
 function clickLocations()
 {
     $("#locations").css("visibility", "visible");
     $("#locations").css("height", "auto");
     $("#locations").css("width", "auto");
-    $("#content").css("padding-left", $('#sidebar').css("width"));
+    resetLayout();
+}
+
+function initMap() {
+    var solitude = {lat: -25.344, lng: 131.036};
+    var map = new google.maps.Map(document.getElementById('map'), {zoom: 4, center: solitude});
+    var marker = new google.maps.Marker({position: solitude, map: map});
 }
