@@ -8,4 +8,10 @@ function initMap() {
     // var marker = new google.maps.Marker({position: uluru, map: map});
 }
 
-$("#content").css("padding-left", $('#sidebar').width() + "px");
+$("#content").css("padding-left", $('#sidebar').css("width"));
+
+function clickLocations()
+{
+    $("#locationItems").css("visibility", "visible");
+    $("#locationItems").css("height", "auto");
+}
