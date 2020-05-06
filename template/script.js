@@ -1,21 +1,34 @@
-resetLayout();
+setLayout();
 
-window.addEventListener('resize', (e) =>
+$(window).resize(() =>
 {
-    resetLayout();
+    setLayout();
 });
 
-function resetLayout()
+function setLayout()
 {
     $("#positioner").css({width: $("body").width()-$("#sidebar").width(), 'margin-left': $("#sidebar").width()});
 }
 
 function clickLocations()
 {
-    $("#locations").css("visibility", "visible");
-    $("#locations").css("height", "auto");
-    $("#locations").css("width", "auto");
-    resetLayout();
+    var steps = 10;
+    var animater = $("#locationsAnimation");
+    var widthStep = $("#locations").outerWidth()/steps;
+    var heightStep = $("#locations").outerHeight()/steps;
+
+    var counter = 0;
+    var func = setInterval(()=>{
+        if(counter == steps) {
+            clearInterval(func);
+        } else {
+            animater.css({width: animater.outerWidth()+widthStep, height: animater.outerHeight()+heightStep});
+        }
+        counter++;
+    }, 10);
+    setLayout();
+
+    $("")
 }
 
 function initMap() {
