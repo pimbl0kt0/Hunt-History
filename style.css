@@ -3,21 +3,28 @@ body {
     min-height: 100%;
     font-family: Tahoma, Geneva, Verdana, sans-serif;
     max-width: 100%;
-    overflow-x: hidden;
 }
 
 #header {
-    height: 50px;
-    background-color: grey;
+    background-color: rgb(209, 209, 209);
+    padding: 10px;
+}
+
+#title {
+    font-size: 50px;
+    line-height: 78%;
+    margin-bottom: 10px;
 }
 
 #sidebar {
-    height: 100%;
     background-color: rgb(250, 250, 250);
-    position: absolute;
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 0px 0px 10px 0px;
+    float: left;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
 }
 
 #sidebar li {
@@ -31,38 +38,72 @@ body {
     margin-left: 10px;
     margin-right: 10px;
     user-select: none;
-    transition: border 0.15s ease-out;
-    border-bottom: solid transparent 1px;
+    transition: color 0.15s ease-out;
 }
 
 .sidebarItems:hover {
-    border-bottom: solid black 1px;
     cursor: pointer;
+    color: #3fd1a5;
 }
 
-#sidebarClicked {
+.sidebarClicked {
     text-decoration: none;
-    color: black;
+    color: #3fd1a5;
     margin-top: 10px;
     margin-left: 10px;
     margin-right: 10px;
     user-select: none;
-    border-bottom: solid black 1px;
+    cursor: pointer;
+}
+
+#locationsAnimation {
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+    padding: 0px;
+    transition: 0.5s;
+    position: absolute;
+    margin-left: 30px;
+    margin-top: 0px;
 }
 
 #locations {
-    visibility: hidden;
-    height: 0px;
-    width: 0px;
-    background-color: gainsboro;
-    margin: 0;
-    padding: 0;
+    display: flex;
+    position: absolute;
+    background-color: rgb(233, 233, 233);
+    padding: 0px 3px 12px 3px;
+    margin: 0px;
+    z-index: 1;
+    border: 2px solid rgb(220, 220, 220);
 }
 
 #locations li {
+    flex: 1 0 auto;
+    padding: 0;
+    margin: 0;
+}
+
+#positioner {
     display: flex;
 }
 
 #content {
-    width: 100%;
+    margin: 10px;
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#hcchc {
+    align-self: center;
+}
+
+#secondImages {
+    margin-top: 10px;
+    display: flex;
+    align-self: center;
+}
+
+#njarts {
+    margin-left: 35px;
 }

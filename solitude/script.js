@@ -1,22 +1,12 @@
-resetLayout();
-
-window.addEventListener('resize', (e) =>
+$("#sidebar span, #locationsAnimation").mouseenter(() =>
 {
-    resetLayout();
+    $("#locationsAnimation").css({width: $("#locations").outerWidth(), height: $("#locations").outerHeight()});
+    $("#sidebar span").attr("class", "sidebarClicked");
+}).mouseleave(() =>
+{
+    $("#locationsAnimation").css({width: 0, height: 0});
+    $("#sidebar span").attr("class", "sidebarItems");
 });
-
-function resetLayout()
-{
-    $("#positioner").css({width: $("body").width()-$("#sidebar").width(), 'margin-left': $("#sidebar").width()});
-}
-
-function clickLocations()
-{
-    $("#locations").css("visibility", "visible");
-    $("#locations").css("height", "auto");
-    $("#locations").css("width", "auto");
-    resetLayout();
-}
 
 function initMap() {
     var solitude = {lat: -25.344, lng: 131.036};
